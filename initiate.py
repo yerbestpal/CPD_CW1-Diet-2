@@ -24,10 +24,9 @@ def create_dynamodb_table(table_name):
     )
     print("Table status:", table.table_status)
 
-    if table.table_status == 'ACTIVE':
-        print("Table created successfully.")
-    else:
-        print("Table creation failed.")
+    while table.table_status != 'ACTIVE':
+      print("Waiting on successful table status")
+    print("Table created successfully.")
 
 # Create SQS Standard Queue
 def create_sqs_queue(queue_name):
