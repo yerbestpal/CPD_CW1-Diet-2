@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Id": "example-ID",
+  "Statement": [
+    {
+      "Sid": "example-statement-ID",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": [
+        "SQS:SendMessage"
+      ],
+      "Resource": "arn:aws:sqs:us-east-1:973567983713:diet2_s2030507_queue",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:s3:*:*:diet2-s2030507-bucket"
+        },
+        "StringEquals": {
+          "aws:SourceAccount": "973567983713"
+        }
+      }
+    }
+  ]
+}
