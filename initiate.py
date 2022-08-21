@@ -73,5 +73,5 @@ def create_sns_topic(topic_name):
 
 create_dynamodb_table('diet2_s2030507_table')
 create_sqs_queue('diet2_s2030507_queue')
-# create_sns_topic('diet2-s2030507-sns')
-# create_ec2_instance('t2.micro', 'vockey1')
+create_sns_topic('diet2-s2030507-sns')
+create_ec2_instance('t2.micro', 'vockey1')
