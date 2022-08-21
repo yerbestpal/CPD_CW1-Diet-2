@@ -26,12 +26,12 @@ def upload_text_files(dir):
 
         # Publish message to SNS.
         # message_id = ...
-        message_id = publish_message(
-          'arn:aws:sns:us-east-1:973567983713:diet2-s2030507-sns',
-          file,
-          'File upload status'
-        )
-        print(message_id)
+        # message_id = publish_message(
+        #   'arn:aws:sns:us-east-1:973567983713:diet2-s2030507-sns',
+        #   file,
+        #   'File upload status'
+        # )
+        # print(message_id)
         time.sleep(30)
 
 def publish_message(topic_arn, message, subject):
