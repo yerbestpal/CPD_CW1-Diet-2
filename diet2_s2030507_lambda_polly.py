@@ -21,10 +21,10 @@ def lambda_handler(event, context):
     body = str(file['Body'].read())
     print("body: " + body)
 
-    inner_obj = s3_resource.Object('diet2-s2030507-bucket', key)
+    print("FILE: " + str(file))
 
     if file_name == key:
-      if inner_obj.content_type == 'text/plain':
+      if key[key.rfind('.') + 1:len(key)] == 'txt':
         # Detect sentiment of text using Comprehend.
         comprehend = boto3.client('comprehend')
         sentiment = comprehend.detect_sentiment(
