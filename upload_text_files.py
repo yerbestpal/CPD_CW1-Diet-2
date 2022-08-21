@@ -20,7 +20,7 @@ def upload_text_files(dir):
     for file in files:
       dir_path = os.path.join(subdir, file)
       with open(dir_path, 'rb') as data:
-        bucket.put_object(Key="/text_files/" + dir_path[len(dir) + 1 :], Body=data)
+        bucket.put_object(Key="text_files/" + dir_path[len(dir) + 1 :], Body=data)
 
         print('Uploaded ' + str(file))
 

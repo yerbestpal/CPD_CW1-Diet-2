@@ -67,7 +67,7 @@ def lambda_handler(event, context):
 
         # Extract file number from key name and concatenate into audio file name.
         number = re.findall(r'\d', key)
-        bucket.put_object(Key="/audio_files/audio" + str(number[0]) + ".mp3", Body=output['AudioStream'].read())
+        bucket.put_object(Key="audio_files/audio" + str(number[0]) + ".mp3", Body=output['AudioStream'].read())
 
   return {
     'statusCode': 200,
